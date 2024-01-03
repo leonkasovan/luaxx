@@ -1,0 +1,9 @@
+[submodule "external/curl"]
+	path = external/curl
+	url = https://github.com/leonkasovan/curl.git
+[submodule "external/zziplib"]
+	path = external/zziplib
+	url = https://github.com/leonkasovan/zziplib.git
+[submodule "external/zlib"]
+	path = external/zlib
+	url = https://github.com/leonkasovan/zlib.git

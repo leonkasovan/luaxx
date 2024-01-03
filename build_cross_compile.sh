@@ -1,4 +1,6 @@
 #!/bin/bash
+# pre: sudo apt install gcc-aarch64-linux-gnu autoconf cmake libtool
+# pre: sudo apt install libssl-dev:arm64
 
 export CC=aarch64-linux-gnu-gcc
 export AR=aarch64-linux-gnu-ar
