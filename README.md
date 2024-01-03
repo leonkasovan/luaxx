@@ -13,7 +13,7 @@ deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy-backports main restr
 deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy-security main restricted universe multiverse
 sudo dpkg --add-architecture arm64
 sudo apt update
-sudo apt install libssl-dev:arm64
+sudo apt install libssl-dev libssl-dev:arm64
 sudo apt install gcc-aarch64-linux-gnu autoconf cmake libtool
 git clone --recurse-submodules https://github.com/leonkasovan/luaxx.git
 ./build_native.sh
