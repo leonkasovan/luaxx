@@ -10,7 +10,7 @@ cd curl
 os_name=$(uname -s)
 if [[ "$os_name" == *"CYGWIN"* ]] || [[ "$os_name" == *"MINGW"* ]] || [[ "$os_name" == *"MSYS"* ]]; then
 	autoreconf -fi
-	./configure --with-schannel --without-brotli --without-nghttp2 --without-libidn2 --without-libpsl --without-zstd --disable-alt-svc --disable-hsts --disable-tls-srp --disable-proxy --disable-ipv6 --disable-ntlm-wb --disable-ntlm --disable-dict --disable-gopher --disable-gophers --disable-imap --disable-mqtt --disable-pop3 --disable-pop3s --disable-smtp --disable-smtps --disable-telnet --disable-tftp --disable-rtsp --disable-file --disable-ldap --disable-ldaps --disable-pthreads
+	./configure --with-schannel --without-brotli --without-nghttp2 --without-libidn2 --without-libpsl --without-zstd --disable-alt-svc --disable-hsts --disable-tls-srp --disable-proxy --disable-ipv6 --disable-ntlm-wb --disable-ntlm --disable-dict --disable-gopher --disable-imap --disable-mqtt --disable-pop3 --disable-smtp --disable-telnet --disable-tftp --disable-rtsp --disable-file --disable-ldap --disable-ldaps --disable-pthreads
 	sed -i 's/^#define USE_UNIX_SOCKETS 1/\/\/#define USE_UNIX_SOCKETS 1/' lib/curl_config.h
 elif [[ "$os_name" == *"Linux"* ]]; then
 	autoreconf -fi

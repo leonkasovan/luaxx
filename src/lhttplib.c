@@ -93,6 +93,7 @@ Dont forget to define CURL_STATICLIB while building liblua
 	C_OPT(LOW_SPEED_TIME, number) \
 	C_OPT(COOKIELIST, string) \
 	C_OPT(POSTREDIR, number) \
+	C_OPT(PROGRESS_TYPE, number) \
 
 #else
 #define C_OPT(n, t)
