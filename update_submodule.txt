@@ -1,0 +1,8 @@
+cd external\curl
+git commit -a
+git push origin master
+cd ..\..
+git add external\curl
+git commit -a
+git push origin main
+git submodule update --init --recursive
