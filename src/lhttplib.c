@@ -57,7 +57,6 @@ Dont forget to define CURL_STATICLIB while building liblua
 	lua_push##value_type(context, value); \
 	lua_settable(context, -3);
 
-#ifdef WIN32
 #define C_OPT(n, t)
 #define ALL_CURL_OPT \
 	C_OPT(URL, string) \
@@ -93,45 +92,7 @@ Dont forget to define CURL_STATICLIB while building liblua
 	C_OPT(LOW_SPEED_TIME, number) \
 	C_OPT(COOKIELIST, string) \
 	C_OPT(POSTREDIR, number) \
-	C_OPT(PROGRESS_TYPE, number) \
-
-#else
-#define C_OPT(n, t)
-#define ALL_CURL_OPT \
-	C_OPT(URL, string) \
-	C_OPT(PORT, number) \
-	C_OPT(PROXY, string) \
-	C_OPT(USERPWD, string) \
-	C_OPT(PROXYUSERPWD, string) \
-	C_OPT(RANGE, string) \
-	C_OPT(TIMEOUT, number) \
-	C_OPT(POSTFIELDS, string) \
-	C_OPT(REFERER, string) \
-	C_OPT(USERAGENT, string) \
-	C_OPT(RESUME_FROM, number) \
-	C_OPT(COOKIE, string) \
-	C_OPT(HEADER, boolean) \
-	C_OPT(NOPROGRESS, boolean) \
-	C_OPT(UPLOAD, boolean) \
-	C_OPT(POST, boolean) \
-	C_OPT(AUTOREFERER, boolean) \
-	C_OPT(PROXYPORT, number) \
-	C_OPT(POSTFIELDSIZE, number) \
-	C_OPT(HTTPGET, boolean) \
-	C_OPT(COOKIEJAR, string) \
-	C_OPT(ENCODING, string) \
-	C_OPT(PROXYTYPE, number) \
-	C_OPT(HTTPAUTH, number) \
-	C_OPT(PROXYAUTH, number) \
-	C_OPT(CUSTOMREQUEST, string) \
-	C_OPT(FRESH_CONNECT, number) \
-	C_OPT(COOKIEFILE, string) \
-	C_OPT(VERBOSE, boolean) \
-	C_OPT(LOW_SPEED_LIMIT, number) \
-	C_OPT(LOW_SPEED_TIME, number) \
-	C_OPT(COOKIELIST, string) \
-
-#endif
+	C_OPT(PROGRESS_TYPE, number)
 
 struct feat {
 	const char *name;
