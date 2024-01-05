@@ -1,3 +1,11 @@
+cd external/curl
+git pull origin master OR git pull origin main
+cd ../..
+git commit -a
+git push
+
+
+
 cd external\curl
 git commit -a
 git push origin master
