@@ -1,7 +1,7 @@
 # luaxx
 Lua with eXtra library
 
-# Prequisite
+# Prequisite (Ubuntu)
 ```
 sudo nano /etc/apt/sources.list
 deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
