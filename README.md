@@ -1,6 +1,7 @@
 # luaxx
 Lua with eXtra library
 
+# Prequisite (Ubuntu)
 ```
 sudo nano /etc/apt/sources.list
 deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
@@ -15,6 +16,10 @@ sudo dpkg --add-architecture arm64
 sudo apt update
 sudo apt install libssl-dev libssl-dev:arm64
 sudo apt install gcc-aarch64-linux-gnu autoconf cmake libtool
+```
+
+# Building
+```
 git clone --recurse-submodules https://github.com/leonkasovan/luaxx.git
 ./build_native.sh
 ./build_cross_compile.sh
