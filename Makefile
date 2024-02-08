@@ -42,6 +42,16 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	rm $(OBJS) $(TARGET)
+	rm -r obj/
+	rm external/*.a
+	rm external/zlib/*.o
+	rm external/zziplib/zzip/*.o
+	rm external/curl/lib/*.o
+	rm external/curl/lib/vauth/*.o
+	rm external/curl/lib/vssh/*.o
+	rm external/curl/lib/vtls/*.o
+	rm external/curl/lib/vquic/*.o
+	rm external/curl/lib/curl_config.h
 	$(MAKE) -f zlib.Makefile clean
 	$(MAKE) -f zzip.Makefile clean
 	$(MAKE) -f curl.Makefile clean

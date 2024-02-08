@@ -2,9 +2,10 @@
 # pre: sudo apt install gcc-aarch64-linux-gnu autoconf cmake libtool
 # pre: sudo apt install libssl-dev:arm64
 
-export CC=aarch64-linux-gnu-gcc
-export AR=aarch64-linux-gnu-ar
-ARCH=aarch64-linux-gnu
+# export CC=aarch64-linux-gnu-gcc
+# export AR=aarch64-linux-gnu-ar
+export CC=/home/ark/recalbox-rg353x/output/host/bin/aarch64-buildroot-linux-gnu-gcc
+export AR=/home/ark/recalbox-rg353x/output/host/bin/aarch64-buildroot-linux-gnu-ar
 
 cd external
 
@@ -20,7 +21,7 @@ if [[ "$os_name" == *"CYGWIN"* ]] || [[ "$os_name" == *"MINGW"* ]] || [[ "$os_na
 	sed -i 's/^#define USE_UNIX_SOCKETS 1/\/\/#define USE_UNIX_SOCKETS 1/' lib/curl_config.h
 elif [[ "$os_name" == *"Linux"* ]]; then
 	autoreconf -fi
-	./configure --host=$ARCH CFLAGS="-Os -ffunction-sections -fdata-sections -fno-unwind-tables -fno-asynchronous-unwind-tables -flto" LDFLAGS="-Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections" --with-openssl --without-brotli --without-nghttp2 --without-libidn2 --without-libpsl --without-zstd --disable-alt-svc --disable-hsts --disable-tls-srp --disable-proxy --disable-ipv6 --disable-ntlm-wb --disable-ntlm --disable-dict --disable-gopher --disable-imap --disable-mqtt --disable-pop3 --disable-smtp --disable-telnet --disable-tftp --disable-rtsp --disable-file --disable-ldap --disable-ldaps
+	./configure --host=aarch64-pc-linux-gnu --build=x86_64-pc-linux-gnu CFLAGS="-Os -ffunction-sections -fdata-sections -fno-unwind-tables -fno-asynchronous-unwind-tables -flto" LDFLAGS="-Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections" --with-openssl --without-brotli --without-nghttp2 --without-libidn2 --without-libpsl --without-zstd --disable-alt-svc --disable-hsts --disable-tls-srp --disable-proxy --disable-ipv6 --disable-ntlm-wb --disable-ntlm --disable-dict --disable-gopher --disable-imap --disable-mqtt --disable-pop3 --disable-smtp --disable-telnet --disable-tftp --disable-rtsp --disable-file --disable-ldap --disable-ldaps
 else
 	echo "OS $os_name is unknown"
 	exit 1
