@@ -15,7 +15,7 @@ deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy-security main restri
 sudo dpkg --add-architecture arm64
 sudo apt update
 sudo apt install libssl-dev libssl-dev:arm64
-sudo apt install gcc-aarch64-linux-gnu autoconf cmake libtool
+sudo apt install gcc-aarch64-linux-gnu automake autoconf cmake libtool
 ```
 
 # Building
