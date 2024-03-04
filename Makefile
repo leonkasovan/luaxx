@@ -1,11 +1,9 @@
-#CC = aarch64-linux-gnu-gcc
-
 ifeq ($(OS),Windows_NT)
 	LDFLAGS = -lWS2_32 -lcrypt32 -lbcrypt
 	CFLAGS = -O2 -Wall -Isrc -D_FILE_OFFSET_BITS=64 -DCURL_STATICLIB -Iexternal/curl/include -Iexternal/zziplib/ -Iexternal/zlib
 	TARGET = luaxx.exe
 else
-	LDFLAGS = -lssl -lcrypto -lpthread -ldl -lm
+	LDFLAGS = -lssl -lcrypto -lpthread -ldl -lm $(SYSROOT)/usr/lib/libzstd.a
 	CFLAGS = -O2 -Wall -Isrc -D_FILE_OFFSET_BITS=64 -DLUA_USE_LINUX -DCURL_STATICLIB -Iexternal/curl/include -Iexternal/zziplib/ -Iexternal/zlib
 	TARGET = luaxx
 endif

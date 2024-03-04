@@ -349,7 +349,7 @@ ifeq ($(OS),Windows_NT)
 	CFLAGS = -DBUILDING_LIBCURL -DHAVE_CONFIG_H -Iexternal/zlib -Iexternal/curl/include -Iexternal/curl/lib -Wall -Wextra
 #	CFLAGS = -DBUILDING_LIBCURL -DHAVE_WS2TCPIP_H -DHAVE_LIBZ -DUSE_SCHANNEL -DUSE_THREADS_WIN32 -DUSE_WIN32_CRYPTO -DUSE_WINDOWS_SSPI -DUSE_WIN32_LARGE_FILES -DUSE_UNIX_SOCKETS -DHAVE_CONFIG_H -Iexternal/curl/include -Iexternal/curl/lib -Wall -Wextra
 else
-	CFLAGS = -DBUILDING_LIBCURL -DHAVE_LIBZ -DCURL_DISABLE_OPENSSL_AUTO_LOAD_CONFIG -DUSE_OPENSSL -DHAVE_CONFIG_H -Iexternal/zlib -Iexternal/curl/include -Iexternal/curl/lib -Wall -Wextra
+	CFLAGS = -DBUILDING_LIBCURL -DHAVE_CONFIG_H -Iexternal/zlib -Iexternal/curl/include -Iexternal/curl/lib -Wall -Wextra
 endif
 
 # Source code directories
