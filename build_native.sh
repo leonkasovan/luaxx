@@ -1,4 +1,5 @@
 #!/bin/bash
+# Build luaxx native (OS arch) with static library: zlib, zzip and curl
 
 cd external
 
@@ -26,4 +27,4 @@ cmake .
 cd ../..    # back to /f/Projects/luaxx/
 
 mkdir -p obj
-make
+make  -f static.Makefile
