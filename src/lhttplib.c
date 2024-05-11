@@ -122,12 +122,12 @@ static const struct feat feats[] = {
   {"HTTPS-proxy",    CURL_VERSION_HTTPS_PROXY},
   {"MultiSSL",       CURL_VERSION_MULTI_SSL},
   {"PSL",            CURL_VERSION_PSL},
-#ifdef WIN32
+  {"zstd",           CURL_VERSION_ZSTD},
+// #ifdef WIN32
   {"alt-svc",        CURL_VERSION_ALTSVC},
   {"Unicode",        CURL_VERSION_UNICODE},
   {"HTTP3",          CURL_VERSION_HTTP3},
-  {"zstd",           CURL_VERSION_ZSTD},
-#endif
+// #endif
 };
 
 #define FIRST_ARG 1
