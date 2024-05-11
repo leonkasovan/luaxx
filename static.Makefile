@@ -3,7 +3,7 @@ ifeq ($(OS),Windows_NT)
 	CFLAGS = -O2 -Wall -Isrc -D_FILE_OFFSET_BITS=64 -DCURL_STATICLIB -Iexternal/curl/include -Iexternal/zziplib/ -Iexternal/zlib
 	TARGET = luaxx.exe
 else
-	LDFLAGS = -lssl -lcrypto -lpthread -ldl -lm $(SYSROOT)/usr/lib/libzstd.a
+	LDFLAGS = -lssl -lcrypto -lpthread -ldl -lm
 	CFLAGS = -O2 -Wall -Isrc -D_FILE_OFFSET_BITS=64 -DLUA_USE_LINUX -DCURL_STATICLIB -Iexternal/curl/include -Iexternal/zziplib/ -Iexternal/zlib
 	TARGET = luaxx
 endif
@@ -30,9 +30,12 @@ external/libzzip.a:
 
 external/libcurl.a:
 	$(MAKE) -f curl.Makefile
+
+external/libzstd.a:
+	@echo "external/libzstd.a is built"
 	
 # ============== Main Target =============================
-$(TARGET): $(OBJS) external/libz.a external/libzzip.a external/libcurl.a
+$(TARGET): $(OBJS) external/libz.a external/libzzip.a external/libcurl.a external/libzstd.a
 	$(CC) $(CFLAGS) $^ -o $@ -s $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -50,8 +53,10 @@ clean:
 	rm external/curl/lib/vtls/*.o
 	rm external/curl/lib/vquic/*.o
 	rm external/curl/lib/curl_config.h
-	$(MAKE) -f zlib.Makefile clean
-	$(MAKE) -f zzip.Makefile clean
-	$(MAKE) -f curl.Makefile clean
+	rm -r external/zstd/lib/obj/
+	rm -r external/zstd/lib/libzstd.a
+	$(MAKE) -j4 -f zlib.Makefile clean
+	$(MAKE) -j4 -f zzip.Makefile clean
+	$(MAKE) -j4 -f curl.Makefile clean
 
 .PHONY: all clean

@@ -7,3 +7,6 @@
 [submodule "external/curl"]
 	path = external/curl
 	url = https://github.com/leonkasovan/curl.git
+[submodule "external/zstd"]
+	path = external/zstd
+	url = https://github.com/facebook/zstd
