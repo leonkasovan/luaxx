@@ -1,6 +1,5 @@
 /* lib/curl_config.h.  Generated from curl_config.h.in by configure.  */
 /* lib/curl_config.h.in.  Generated from configure.ac by autoheader.  */
-/* Copy to external/curl/lib/curl_config.h */
 
 /* to enable curl debug memory tracking */
 /* #undef CURLDEBUG */
@@ -144,7 +143,7 @@
 #define HAVE_ALARM 1
 
 /* Define to 1 if you have the `arc4random' function. */
-#define HAVE_ARC4RANDOM 1
+/* #undef HAVE_ARC4RANDOM */
 
 /* Define to 1 if you have the <arpa/inet.h> header file. */
 #define HAVE_ARPA_INET_H 1
@@ -408,10 +407,10 @@
 /* #undef HAVE_LIBWOLFSSH */
 
 /* if zlib is available */
-#define  HAVE_LIBZ 1
+#define HAVE_LIBZ 1
 
 /* Define to 1 if you have the `zstd' library (-lzstd). */
-/* #undef HAVE_LIBZSTD */
+#define HAVE_LIBZSTD 1
 
 /* Define to 1 if you have the <linux/tcp.h> header file. */
 #define HAVE_LINUX_TCP_H 1
@@ -758,10 +757,10 @@
 /* #undef HAVE_X509_H */
 
 /* if libzstd is in use */
-/* #undef HAVE_ZSTD */
+#define HAVE_ZSTD 1
 
 /* Define to 1 if you have the <zstd.h> header file. */
-/* #undef HAVE_ZSTD_H */
+#define HAVE_ZSTD_H 1
 
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
