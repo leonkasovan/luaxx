@@ -57,6 +57,7 @@ clean:
 	rm -r external/zstd/lib/libzstd.a
 	$(MAKE) -j4 -f zlib.Makefile clean
 	$(MAKE) -j4 -f zzip.Makefile clean
+	rm external/zziplib/zzip/_config.h
 	$(MAKE) -j4 -f curl.Makefile clean
 
 .PHONY: all clean
