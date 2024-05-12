@@ -5,10 +5,10 @@ id_name=""
 # Check if the file /etc/os-release exists
 if [ -f /etc/os-release ]; then
     # Extract the ID information using grep
-    id=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2-)
+    id_name=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2-)
     
     # Print the extracted ID
-    echo "ID: $id"
+    echo "ID: $id_name"
 else
     echo "/etc/os-release not found."
 	exit 1
